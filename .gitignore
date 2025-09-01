@@ -1,0 +1,10 @@
+/*.env
+/*.json
+.idea
+data
+logs
+.conda
+/data
+/logs
+/.conda
+/.idea

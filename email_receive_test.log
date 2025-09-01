@@ -1,0 +1,235 @@
+2025-08-31 20:34:16,010 - INFO - 开始邮件接收测试...
+2025-08-31 20:34:16,011 - INFO - 调用process_once()处理邮件...
+2025-08-31 20:39:16,833 - ERROR - 邮件处理出错: abort: command: SEARCH => socket error: EOF
+Traceback (most recent call last):
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1056, in _command_complete
+    typ, data = self._get_tagged_response(tag, expect_bye=logout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1182, in _get_tagged_response
+    self._get_response()
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1084, in _get_response
+    resp = self._get_line()
+           ^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1194, in _get_line
+    raise self.abort('socket error: EOF')
+imaplib.IMAP4.abort: socket error: EOF
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "E:\Workspace\MySolution\SuperSecretary\test_email_receive.py", line 17, in <module>
+    process_once()
+  File "E:\Workspace\MySolution\SuperSecretary\app\email_gateway.py", line 95, in process_once
+    allowed_subjects = os.getenv("MAIL_ALLOWED_SUBJECTS", "SEC:,Re:").split(",")
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 743, in search
+    typ, dat = self._simple_command(name, *criteria)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1239, in _simple_command
+    return self._command_complete(name, self._command(name, *args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1058, in _command_complete
+    raise self.abort('command: %s => %s' % (name, val))
+imaplib.IMAP4.abort: command: SEARCH => socket error: EOF
+2025-08-31 20:44:47,907 - INFO - 开始邮件接收测试...
+2025-08-31 20:44:47,907 - INFO - 调用process_once()处理邮件...
+2025-08-31 20:47:10,362 - INFO - 开始邮件接收测试...
+2025-08-31 20:47:10,363 - INFO - 调用process_once()处理邮件...
+2025-08-31 20:47:21,216 - ERROR - 邮件处理出错: TimeoutError: The read operation timed out
+Traceback (most recent call last):
+  File "E:\Workspace\MySolution\SuperSecretary\test_email_receive.py", line 17, in <module>
+    process_once()
+  File "E:\Workspace\MySolution\SuperSecretary\app\email_gateway.py", line 110, in process_once
+    typ, data = M.search(None, search_criteria)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 743, in search
+    typ, dat = self._simple_command(name, *criteria)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1239, in _simple_command
+    return self._command_complete(name, self._command(name, *args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1056, in _command_complete
+    typ, data = self._get_tagged_response(tag, expect_bye=logout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1182, in _get_tagged_response
+    self._get_response()
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1084, in _get_response
+    resp = self._get_line()
+           ^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1192, in _get_line
+    line = self.readline()
+           ^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 332, in readline
+    line = self.file.readline(_MAXLINE + 1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\ssl.py", line 1251, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\ssl.py", line 1103, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+2025-08-31 20:59:48,491 - INFO - 开始邮件接收测试...
+2025-08-31 20:59:48,491 - INFO - 调用process_once()处理邮件...
+2025-08-31 21:02:56,602 - ERROR - 邮件处理出错: TimeoutError: The read operation timed out
+Traceback (most recent call last):
+  File "E:\Workspace\MySolution\SuperSecretary\test_email_receive.py", line 17, in <module>
+    process_once()
+  File "E:\Workspace\MySolution\SuperSecretary\app\email_gateway.py", line 163, in process_once
+    typ, data = M.search(None, criteria)
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 743, in search
+    typ, dat = self._simple_command(name, *criteria)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1239, in _simple_command
+    return self._command_complete(name, self._command(name, *args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1056, in _command_complete
+    typ, data = self._get_tagged_response(tag, expect_bye=logout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1182, in _get_tagged_response
+    self._get_response()
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1084, in _get_response
+    resp = self._get_line()
+           ^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1192, in _get_line
+    line = self.readline()
+           ^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 332, in readline
+    line = self.file.readline(_MAXLINE + 1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\ssl.py", line 1251, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\ssl.py", line 1103, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+2025-08-31 21:03:28,558 - INFO - 开始邮件接收测试...
+2025-08-31 21:03:28,558 - INFO - 调用process_once()处理邮件...
+2025-08-31 21:06:39,823 - ERROR - 邮件处理出错: TimeoutError: The read operation timed out
+Traceback (most recent call last):
+  File "E:\Workspace\MySolution\SuperSecretary\test_email_receive.py", line 17, in <module>
+    process_once()
+  File "E:\Workspace\MySolution\SuperSecretary\app\email_gateway.py", line 163, in process_once
+    typ, data = M.search(None, criteria)
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 743, in search
+    typ, dat = self._simple_command(name, *criteria)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1239, in _simple_command
+    return self._command_complete(name, self._command(name, *args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1056, in _command_complete
+    typ, data = self._get_tagged_response(tag, expect_bye=logout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1182, in _get_tagged_response
+    self._get_response()
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1084, in _get_response
+    resp = self._get_line()
+           ^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1192, in _get_line
+    line = self.readline()
+           ^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 332, in readline
+    line = self.file.readline(_MAXLINE + 1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\ssl.py", line 1251, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\ssl.py", line 1103, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+2025-08-31 21:08:41,324 - INFO - 开始邮件接收测试...
+2025-08-31 21:08:41,324 - INFO - 调用process_once()处理邮件...
+2025-08-31 21:11:49,865 - ERROR - 邮件处理出错: TimeoutError: The read operation timed out
+Traceback (most recent call last):
+  File "E:\Workspace\MySolution\SuperSecretary\test_email_receive.py", line 17, in <module>
+    process_once()
+  File "E:\Workspace\MySolution\SuperSecretary\app\email_gateway.py", line 163, in process_once
+    typ, data = M.search(None, criteria)
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 743, in search
+    typ, dat = self._simple_command(name, *criteria)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1239, in _simple_command
+    return self._command_complete(name, self._command(name, *args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1056, in _command_complete
+    typ, data = self._get_tagged_response(tag, expect_bye=logout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1182, in _get_tagged_response
+    self._get_response()
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1084, in _get_response
+    resp = self._get_line()
+           ^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1192, in _get_line
+    line = self.readline()
+           ^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 332, in readline
+    line = self.file.readline(_MAXLINE + 1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\ssl.py", line 1251, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\ssl.py", line 1103, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+2025-08-31 21:20:36,375 - INFO - 开始邮件接收测试...
+2025-08-31 21:20:36,376 - INFO - 调用process_once()处理邮件...
+2025-08-31 21:23:45,974 - ERROR - 邮件处理出错: TimeoutError: The read operation timed out
+Traceback (most recent call last):
+  File "E:\Workspace\MySolution\SuperSecretary\test_email_receive.py", line 17, in <module>
+    process_once()
+  File "E:\Workspace\MySolution\SuperSecretary\app\email_gateway.py", line 163, in process_once
+    typ, data = M.search(None, criteria)
+                ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 743, in search
+    typ, dat = self._simple_command(name, *criteria)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1239, in _simple_command
+    return self._command_complete(name, self._command(name, *args))
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1056, in _command_complete
+    typ, data = self._get_tagged_response(tag, expect_bye=logout)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1182, in _get_tagged_response
+    self._get_response()
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1084, in _get_response
+    resp = self._get_line()
+           ^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 1192, in _get_line
+    line = self.readline()
+           ^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\imaplib.py", line 332, in readline
+    line = self.file.readline(_MAXLINE + 1)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\socket.py", line 720, in readinto
+    return self._sock.recv_into(b)
+           ^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\ssl.py", line 1251, in recv_into
+    return self.read(nbytes, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "e:\Workspace\MySolution\SuperSecretary\.conda\secpy312\Lib\ssl.py", line 1103, in read
+    return self._sslobj.read(len, buffer)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TimeoutError: The read operation timed out
+2025-08-31 21:26:50,179 - INFO - 开始邮件接收测试...
+2025-08-31 21:26:50,179 - INFO - 调用process_once()处理邮件...
+2025-08-31 21:31:10,593 - INFO - 开始邮件接收测试...
+2025-08-31 21:31:10,593 - INFO - 调用process_once()处理邮件...
+2025-08-31 21:31:18,751 - INFO - 邮件处理完成，耗时: 8.16秒
